@@ -25,6 +25,7 @@ con = sqlite3.connect('baseball.sqlite')
 
 # DataFrameをSQLiteデータベースのテーブルに書き込む
 df.to_sql('baseball_data', con, index=False, if_exists='replace')
+df.to_csv('output.csv', index=False)
 
 # 接続を閉じる
 con.close()
